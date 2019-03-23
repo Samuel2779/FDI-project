@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <title>Isna</title>
 
+     <link rel="stylesheet" href="css/jquery.bxslider.css"> 
 
 
-
+ 
 </head>
 
 <style>
@@ -288,16 +289,13 @@
     }
     
     .megawrapper{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 90%;
+        
+        
+       
     }
     .megaItem{
-       width: 23%;
-        
-        margin-top: 2%;
+      
+       
     }
     
     </style>    
@@ -339,7 +337,6 @@
              <img src="Img/16CurrentDevices.jpg" alt="prototype 16" class="megaItem">
              <img src="Img/17ModifyDevice.jpg" alt="prototype 17" class="megaItem">
             
-        
         </div>
 
 
@@ -348,5 +345,19 @@
 
 
     </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/jquery.bxslider.js"></script>
+    
+    <script>
+        $('.megawrapper').bxSlider({
+                auto:'true',
+                mode:'fade'
+                
+            });   
+    
+    
+    
+    </script>
 
 </html>
