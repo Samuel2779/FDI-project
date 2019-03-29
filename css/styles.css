@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Isna - Personas</title>
-
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/jquery.bxslider.css"> 
-    <link href="css/styles.css" rel="stylesheet">
-
-
-
-
-</head>
-    
-     <style>
-                /* http://meyerweb.com/eric/tools/css/reset/ 
+   /* http://meyerweb.com/eric/tools/css/reset/ 
                 v2.0 | 20110126
             License: none (public domain)
                 */
@@ -66,38 +49,39 @@
                 
          @import url('https://fonts.googleapis.com/css?family=Muli');
 
-        body {
-            background-image: url('img/backblur.png');
-            background-size: 150%;
-            background-repeat: no-repeat;
-            font-family: 'Muli', sans-serif;
-            color: white;
-            font-size: 20px;
-        }
+    body {
+        background-image: url('img/backblur.png');
+        background-size: 200%;
+        background-repeat: no-repeat;
+        font-family: 'Muli', sans-serif;
+        color: white;
+        background-color: #28292e;
+        font-size: 20px;
+    }
 
-        a {
-            color: white;
-            text-decoration: none;
-        }
+    a {
+        color: white;
+        text-decoration: none;
+    }
 
-        .hvr-shrink {
-            display: inline-block;
-            vertical-align: middle;
-            -webkit-transform: perspective(1px) translateZ(0);
-            transform: perspective(1px) translateZ(0);
-            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-            -webkit-transition-duration: 0.3s;
-            transition-duration: 0.3s;
-            -webkit-transition-property: transform;
-            transition-property: transform;
-        }
+    .hvr-shrink {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+    }
 
-        .hvr-shrink:hover,
-        .hvr-shrink:focus,
-        .hvr-shrink:active {
-            -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-        }
+    .hvr-shrink:hover,
+    .hvr-shrink:focus,
+    .hvr-shrink:active {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
 
     @-webkit-keyframes hvr-wobble-vertical {
         16.65% {
@@ -196,33 +180,74 @@
         }
         
         
-       
-         #logo{
+        body {
+        background-image: url('img/backblur.png');
+        background-size: 200%;
+        background-repeat: no-repeat;
+        font-family: 'Muli', sans-serif;
+        color: white;
+        font-size: 20px;
+        }
+        .megawrapper{
+          margin-top: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            text-align: center;
+           
+        }
+        
+        
+        
+        .imghorizontal{
+            width: 70%;
+            border-radius: 100%;
+        }
+        
+        .imgagesAndNames{
+            width: 300px
+                
+        }
+        
+        #logo{
            width: 45%;
             height: 45%;
-        } 
-         
+        }
         
-         
-         
-                
-    </style>
-                
-        <body>
-             <div class="top">
+        p .name{
+            color: black;
+        }  
+        .informationAndImage{
+      
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+           margin-top: 15%;
+            width: auto;
+        }
+        h2{
 
-                 <a href="index.html"><img class="hvr-wobble-vertical" id="logo" src="img/Logo.png"></a>
-                
-                <a class="hvr-shrink" href="https://marvelapp.com/4fd9204/screen/53931658" target="_blank">Marvel</a>
-                <a class="hvr-shrink" href="prototypes.html">Prototpyes</a>
-                <a class="hvr-shrink" href="personas.html">Personas</a>
-                <a class="hvr-shrink" href="members.html">Members</a>
-                <a class="hvr-shrink" href="benchmarking.html">Benchmarking</a>
+            padding-bottom: 5%;
+            text-align: center;
+            font-size: 115%;
+        }
+        .imageDevice{
+            width: 40%;
+            padding-left: 25%;
 
+        }
+        p .knockiPar{
+            width: 50%;
+            margin-left:25%; 
+            line-height: 25px;
+            padding-bottom: 5%;
+        }
 
-            </div>
-                
-                
-        </body>   
+@media all and(max-width: 960px){
     
-</html>
+    .hvr-shrink{
+        display: none;
+    }
+    
+    
+}
