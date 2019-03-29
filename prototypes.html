@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <title>Isna</title>
 
-     <link rel="stylesheet" href="css/jquery.bxslider.css"> 
+     <link rel="stylesheet" href="css/jquery.bxslider.css">
+     <script src="js/jquery-3.1.1.min.js"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/styles.css" rel="stylesheet">
+     <link href="css/styles.css" rel="stylesheet">
 
  
 </head>
@@ -283,11 +284,40 @@
 
     }
 
-    #logo {
-        width: 45%;
-        height: 45%;
-
-    }
+    body {
+        background-image: url('img/backblur.png');
+        background-repeat: no-repeat;
+        font-family: 'Muli', sans-serif;
+        color: white;
+        font-size: 20px;
+        }
+        #logo{
+           width: 45%;
+           height: 45%;
+        }
+        #menu{
+            width: 30px;
+            height: 30px;
+            display: none;
+        }
+        .drop-menu{
+            display: none;
+        }
+        @media screen and (max-width: 900px){
+            #menu{
+                display: block;
+            }
+            .top .hvr-shrink{
+                display: none;
+            }
+            .drop-menu{
+                text-align: center;
+                background-color: #2c2d33;
+                color: white;
+                line-height: 30px;
+            }
+    
+        }
     
    
     
@@ -296,9 +326,8 @@
     <body>
 
         <div class="top">
-
+            <img src="img/menu.png" id="menu">
             <a href="index.html"><img class="hvr-wobble-vertical" id="logo" src="img/Logo.png"></a>
-
             <a class="hvr-shrink" href="https://marvelapp.com/4fd9204/screen/53931658" target="_blank">Marvel</a>
             <a class="hvr-shrink" href="prototypes.html">Prototpyes</a>
             <a class="hvr-shrink" href="personas.html">Personas</a>
@@ -307,23 +336,30 @@
 
 
         </div>
+        <ul class="drop-menu">
+            <li><a class="hvr-shrink" href="https://marvelapp.com/4fd9204/screen/53931658" target="_blank">Marvel</a></li>
+            <li><a class="hvr-shrink" href="prototypes.html">Prototpyes</a></li>
+            <li><a class="hvr-shrink" href="personas.html">Personas</a></li>
+            <li><a class="hvr-shrink" href="members.html">Members</a></li>
+            <li><a class="hvr-shrink" href="benchmarking.html">Benchmarking</a></li>
+
+        </ul>
 
 
 
 
 
 
-
-    </body>
+    
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/jquery.bxslider.js"></script>
-    
+    <script src="js/jquery-3.1.1.min.js"></script>
     <script>
-      
-    
-    
-    
-    </script>
+        $('#menu').on('click', function(){
+            $('.drop-menu').slideToggle();
+        });
 
+    </script>
+</body>
 </html>
