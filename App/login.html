@@ -5,17 +5,49 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login server</title>
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-        <link href="css/prototype.css" rel="stylesheet">
-        <script src="js/jquery-3.1.1.min.js"></script>
+        <!--
+        <link href="css/prototype.css" rel="stylesheet"> -->
+        <script src="js/jquery.min.js"></script>
         
     </head>
+    
+    <style>
+        section{
+            width: 100vw;
+            height: 100vh;
+            float: left;
+        }
+        #slide1{
+            background-color: aqua;
+        }
+        #slide2{
+            background-color: bisque;
+        }
+        #slide3{
+            background-color: cyan;
+        }
+        .login{
+            display: none;
+            text-align: center;
+        }
+        .logo, .main{
+            text-align: center;
+        }
+        
+    
+    </style>
 
     <body>
         <section id="slide1">
             <div>
-                <div>Knocki</div>
-                <div>Register</div>
-                <div>Log In</div>
+                <div class="main logo"><img src="img/NameKnocki.PNG" alt="knocki"></div>
+                <div class="main logButton"><img src="img/loginButton.PNG"></div>
+                <div class="main"><img src="img/RegisterButton.PNG"></div>
+                <div class="login"><input type="email" placeholder="Email Adress"></div>
+                <div class="login"><input type="password" placeholder="Password"></div>
+                <div class="login"><img src="img/loginButton.PNG"></div>
+                
+                
             </div>       
         </section>
         
@@ -36,5 +68,16 @@
         
         </section>
         
+        
+        <script>
+        $('.logButton').on('click',function(){
+            $('.main').hide();
+           $('.logo').show();
+            $('.login').show();
+        });
+            
+        
+        
+        </script>
     </body>
 </html>
