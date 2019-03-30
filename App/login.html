@@ -80,7 +80,7 @@
             background-color: cornflowerblue; 
         }
         #slider5{
-            background-image: url(img/);
+            background-image: url(img/chairBackground.PNG);
         }
         .login{
             display: none;
@@ -102,6 +102,9 @@
             text-align: center;
         }
         .device2{
+            text-align: center;
+        }
+        .Devices{
             text-align: center;
         }
        
@@ -130,7 +133,7 @@
             <div> 
                 <div class="page"><img src="img/profileButton.PNG"> </div>
                 <div class="page"><img src="img/AddDeviceButton.PNG"></div>
-                <div class="page"><img src="img/CurrentDeviceButton.PNG"> </div>
+                <div class="page Current"><img src="img/CurrentDeviceButton.PNG"> </div>
                 <div class="page Out"><img src="img/logOutButton.PNG"> </div>
             </div>
         
@@ -181,8 +184,8 @@
             
         <section id="slide5">
         
-            <div>
-                <div clas="CurrentDevices">Current Devices</div>
+            <div class="Devices">
+                <div class="CurrentDevices">Current Devices</div>
                 <div class="Nick"><img src="img/nickJonas.PNG"> </div>
                 <div class="NickComplete"><img src="img/nickJonasComplete.PNG"></div>
 
@@ -220,8 +223,18 @@
            $('.register').show();
            $('.login').hide();
         });
-        
-        
+            
+        $('.Current').on('click',function(){
+            $('#slide2').hide();
+            $('#slide3').hide();
+            $('#slide4').hide();
+            $('#slide5').show();
+            $('.NickComplete').hide();
+        });
+        $('.Nick').on('click',function(){
+            $('.NickComplete').show();
+            $('.Nick').hide();
+        });
         
         </script>
     </body>
