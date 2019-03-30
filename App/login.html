@@ -22,6 +22,7 @@
         }
         #slide2{
             background-color: bisque;
+            
         }
         #slide3{
             background-color: cyan;
@@ -33,7 +34,9 @@
         .logo, .main{
             text-align: center;
         }
-        
+        .page{
+            text-align: center;
+        }
     
     </style>
 
@@ -42,17 +45,23 @@
             <div>
                 <div class="main logo"><img src="img/NameKnocki.PNG" alt="knocki"></div>
                 <div class="main logButton"><img src="img/loginButton.PNG"></div>
-                <div class="main"><img src="img/RegisterButton.PNG"></div>
+                <div class="main register"><img src="img/RegisterButton.PNG"></div>
+                <div class="login name"><input type="text" name="Name" placeholder="Name"></div>
                 <div class="login"><input type="email" placeholder="Email Adress"></div>
                 <div class="login"><input type="password" placeholder="Password"></div>
-                <div class="login"><img src="img/loginButton.PNG"></div>
+                <div class="login Button"><img src="img/loginButton.PNG"></div>
                 
                 
             </div>       
         </section>
         
         <section id="slide2">
-            <div> </div>
+            <div> 
+                <div class="page"><img src="img/profileButton.PNG"> </div>
+                <div class="page"><img src="img/AddDeviceButton.PNG"></div>
+                <div class="page"><img src="img/CurrentDeviceButton.PNG"> </div>
+                <div class="page Out"><img src="img/logOutButton.PNG"> </div>
+            </div>
         
         </section>
         
@@ -74,8 +83,29 @@
             $('.main').hide();
            $('.logo').show();
             $('.login').show();
+            $('.name').hide();
+        });
+        
+        $('.register').on('click',function(){
+            $('.main').hide();
+           $('.logo').show();
+            $('.login').show();
         });
             
+        $('.Button').on('click',function(){
+           $('#slide1').hide();
+           $('#slide2').show();
+        });
+        
+        $('.Out').on('click',function(){
+           $('#slide2').hide();
+           $('#slide1').show();
+           $('.logo').show();
+           $('.logButton').show();
+           $('.register').show();
+           $('.login').hide();
+        });
+        
         
         
         </script>
