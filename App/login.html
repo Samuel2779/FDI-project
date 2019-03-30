@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login server</title>
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
         <!--
         <link href="css/prototype.css" rel="stylesheet"> -->
         <script src="js/jquery.min.js"></script>
@@ -62,25 +63,32 @@
         }
         
         section{
-            width: 95vw;
+            width: 100vw;
             height: 100vh;
             float: left;
         }
         #slide1{
-            background-color: aqua;
+            background-color: #dae3ed;
+            overflow-y: hidden;
         }
         #slide2{
             background-color: #cdd1d6;
+            overflow-y: hidden;
             
         }
         #slide3{
-            background-color: grey;
+            background-color: #cfd8bc;
+            overflow-y: hidden;
         }
         #slide4{
-            background-color: cornflowerblue; 
+            font-family: 'ZCOOL+XiaoWei';
+            background-color: white; 
+            overflow-y: hidden;
         }
         #slider5{
-            background-image: url(img/chairBackground.PNG);
+            background-image: url('img/chairBackground.PNG');
+            background-repeat: no-repeat;
+            overflow-y: hidden;
         }
         .login{
             display: none;
@@ -95,9 +103,7 @@
         .profile{
             text-align: center;
         }
-        .goHome{
-            float: right;
-        }
+        
         .device{
             text-align: center;
         }
@@ -108,6 +114,80 @@
         .Devices{
             text-align: center;
         }
+        #slide2,#slide3,#slide4,#slide5{
+            display: none;
+        }
+        nav{
+          width: 100%;
+            background-color:  #cdd1d6;
+        }
+        .goHome{
+            right: 15px;
+        }
+        .image-wrapper{
+           display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+       margin-top: 115px;
+        width: auto;
+             
+        }
+        .addCodeImage{
+            margin-top: 70px;
+            
+        }
+        .logButton,.Button{
+            
+            margin-top: 240px; 
+        }
+        .logo{
+            margin-top: 50px
+        }
+        .formed{
+            background-color:  #dae3ed;
+            line-height: 30px;
+            border-radius: 10px;
+            width: 50%;
+            margin-top: 50px;
+            text-align: center;
+        }
+        .but{
+            line-height: 40px; 
+        }
+        .information, .CurrentDevices{
+            line-height: 35px;
+            font-size: 27px;
+             font-family: 'ZCOOL XiaoWei';
+        }
+        .form2{
+            border-radius: 10px;
+            width: 70%;
+            line-height: 40px;
+            font-size: 20px;
+        }
+        .form3{
+             border-radius: 10px;
+            width: 70%;
+            line-height: 40px;
+            font-size: 20px;
+            background-color:#cfd8bc;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .nextButton2{
+            margin-top: 35px
+        }
+        li{
+            margin: 15px 0;
+        }
+        .profile{
+            font-size: 27px;
+            margin: 10px 0;
+        }
+        .goHomeSlide2{
+            background-color:#b0afb5;
+        }
+        
        
         
     
@@ -116,24 +196,27 @@
     <body>
         <section id="slide1">
             <div>
-                <div class="main logo"><img src="img/NameKnocki.PNG" alt="knocki"></div>
-                <div class="main logButton"><img src="img/loginButton.PNG"></div>
-                <div class="main register"><img src="img/RegisterButton.PNG"></div>
-                <div class="login name"><input type="text" name="Name" placeholder="Name"></div>
-                <div class="login"><input type="email" placeholder="Email Adress"></div>
-                <div class="login"><input type="password" placeholder="Password"></div>
-                <div class="login Button"><img src="img/loginButton.PNG"></div>
-               
+                <div class="main logo"><img src="img/NameKnocki.png" alt="knocki"></div>
+                <div class="main logButton but"><img src="img/loginButton.PNG"></div>
+                <div class="main register but"><img src="img/RegisterButton.PNG"></div>
                 
+                <div class="login name"><input type="text" name="Name" placeholder="Name"  class="formed"></div>
+                <div class="login form"><input type="email" placeholder="Email Adress" class="formed"></div>
+                <div class="login form"><input type="password" placeholder="Password" class=formed></div>
+                <div class="login Button "><img src="img/loginButton.PNG"></div>
+               
                 
             </div>
             
         </section>
         
         <section id="slide2">
-            <div> 
-                <div class="page"><img src="img/profileButton.PNG"> </div>
-                <div class="page"><img src="img/AddDeviceButton.PNG"></div>
+           <nav class="home goHomeSlide2">
+               <img src="img/homeButton.PNG" class="goHome">
+            </nav>            
+            <div class="image-wrapper"> 
+                <div class="page profileButton"><img src="img/profileButton.PNG"> </div>
+                <div class="page addDevice"><img src="img/AddDeviceButton.PNG"></div>
                 <div class="page Current"><img src="img/CurrentDeviceButton.PNG"> </div>
                 <div class="page Out"><img src="img/logOutButton.PNG"> </div>
             </div>
@@ -141,31 +224,36 @@
         </section>
         
         <section id="slide3">
-           <div><img src="img/homeButton.PNG" class="goHome"> </div>
+           <nav class="home">
+               <img src="img/homeButton.PNG" class="goHome">
+            </nav>
             
-            <div>
+            <div class="pro-file">
                 <div class="profile">Name</div>
-                <div class="profile">User's Name</div>
+                <div class="profile"><input type="text" placeholder="User's Name" class="form3"></div>
 
                 <div class="profile">Email Adress</div>
-                <div class="profile">email@example.com</div>
+                <div class="profile"><input type="email" placeholder="Email Adress" class="form3"></div>
 
                 <div class="profile">Change Password</div>
-                <div class="profile"><input type="password" placeholder="Current Password"></div>
-                <div class="profile"><input type="password" placeholder="New Password"></div>
-                <div class="profile"><input type="password" placeholder="Confirm Password"></div>
-                 <div class="profile"><img src="img/confirmButton.PNG"></div>
+                <div class="profile"><input type="password" placeholder="Current Password" class="form3"></div>
+                <div class="profile"><input type="password" placeholder="New Password" class="form3"></div>
+                <div class="profile"><input type="password" placeholder="Confirm Password" class="form3"></div>
+                 <div class="profile confirmSlide3"><img src="img/confirmButton.PNG"></div>
             </div>    
         </section>
         
         <section id="slide4">
-            <div>
+           <nav class="home">
+               <img src="img/homeButton.PNG" class="goHome">
+            </nav>            
+            <div class="addCodeImage">
                 <div class="device"><img src="img/knockiLogo.PNG"></div>
                 <div class="device"><img src="img/codeDevice.PNG"></div>
-                <div class="device"><img src="img/nextButton.PNG"></div>
+                <div class="device nextButton"><img src="img/nextButton.PNG"></div>
             
             </div>
-            <div>
+            <div class="information">
                 <div class="device2">Where will your knocki be</div>
                 <div class="device2"><ul class="list">
                         <li><input type="radio" name="g">Home</li>
@@ -173,10 +261,10 @@
                         <li><input type="radio" name="g">Other</li>
                     </ul></div>
                 <div class="device2">Knocki Nickname</div>
-                <div class="device2"><input type="text"></div>
+                <div class="device2"><input type="text" class="form2"></div>
                 <div class="device2">What surface</div>
-                <div class="device2"><input type="text"></div>
-                
+                <div class="device2"><input type="text" class="form2"></div>
+                <div class="device2 nextButton2"><img src="img/nextButton.PNG"></div>
             
             </div>    
         
@@ -184,7 +272,9 @@
         </section>
             
         <section id="slide5">
-        
+           <nav class="home">
+               <img src="img/homeButton.PNG" class="goHome">
+            </nav>        
             <div class="Devices">
                 <div class="CurrentDevices">Current Devices</div>
                 <div class="Nick"><img src="img/nickJonas.PNG"> </div>
@@ -230,12 +320,49 @@
             $('#slide3').hide();
             $('#slide4').hide();
             $('#slide5').show();
-            $('.NickComplete').hide();
+            $('.NickComplete').show();
         });
         $('.Nick').on('click',function(){
             $('.NickComplete').show();
             $('.Nick').hide();
         });
+            
+        $('.profileButton').on('click',function(){
+            $('#slide3').show();
+            $('#slide2').hide();
+        }); 
+        $('.confirmSlide3').on('click',function(){
+             $('#slide2').show();
+            $('#slide3').hide();
+        });
+        $('.goHome').on('click',function(){
+            $('#slide1').hide();
+            $('#slide3').hide();
+            $('#slide4').hide();
+            $('#slide5').hide();
+            $('#slide2').show();
+            $('.main').show();
+            $('.login').hide();
+            
+        }); 
+         $('.addDevice').on('click',function(){
+             $('#slide2').hide();
+             $('.device').show();
+             $('.device2').hide();
+            $('#slide4').show();
+        });
+        $('.nextButton').on('click',function(){
+            $('.device').hide();
+            $('.device2').show();
+        });
+         $('.nextButton2').on('click',function(){
+            $('#slide4').hide();
+            $('#slide5').show();
+            $('.Nick').show();
+             $('.NickComplete').hide();
+            
+        });           
+            
         
         </script>
     </body>
