@@ -6,9 +6,12 @@
         <title>Login server</title>
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
+        <script src="js/jquery.mobile.custom.min.js"></script>
+        <script src="js/jquery.min.js"></script>
         <!--
         <link href="css/prototype.css" rel="stylesheet"> -->
-        <script src="js/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
         
     </head>
     
@@ -68,7 +71,7 @@
             float: left;
         }
         #slide1{
-            background-color: #dae3ed;
+            background-color: white;
             overflow-x: hidden;
         }
         #slide2{
@@ -77,7 +80,7 @@
             
         }
         #slide3{
-            background-color: #cfd8bc;
+            background-color: white;
             overflow-x: hidden;
         }
         #slide4{
@@ -96,6 +99,9 @@
         }
         .logo, .main{
             text-align: center;
+        }
+        .logo{
+            width: 90vw;
         }
         .page{
             text-align: center;
@@ -144,7 +150,7 @@
             margin-top: 50px
         }
         .formed{
-            background-color:  #dae3ed;
+            background-color:  white;
             line-height: 30px;
             border-radius: 10px;
             width: 50%;
@@ -170,9 +176,12 @@
             width: 70%;
             line-height: 40px;
             font-size: 20px;
-            background-color:#cfd8bc;
+            background-color:white;
             margin: 15px 0;
             text-align: center;
+        }
+        .formbutt{
+            margin-bottom: 30px;
         }
         .nextButton2{
             margin-top: 35px
@@ -187,6 +196,42 @@
         .goHomeSlide2{
             background-color:#b0afb5;
         }
+         .taparea{
+            width: 80vw;
+            margin-left: 10vw;
+            background-color: white;
+            border: 1px solid #999;
+            height: 15vw;
+            margin-top: 40px;
+        }
+         .gesture{
+            width: 80vw;
+            height: 50px;
+            background-color: white;
+            opacity: 0.8;
+            border: 1px solid rgba(0,0,0,0.3);
+            margin-left: 10vw;
+            text-align: center;
+        }
+        
+        .dot, .hyphen{
+            background-color: #444;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 16px 5px 0 5px;
+        }
+        
+        .hyphen{
+            width: 38px;
+            border-radius: 4px;
+        }
+         p{
+            padding: 10px;
+            text-align: center;
+            font-size: 26px;
+        }
         
        
         
@@ -197,13 +242,13 @@
         <section id="slide1">
             <div>
                 <div class="main logo"><img src="img/NameKnocki.png" alt="knocki"></div>
-                <div class="main logButton but"><img src="img/loginButton.PNG"></div>
-                <div class="main register but"><img src="img/RegisterButton.PNG"></div>
+                <div class="main logButton but"><input type="button" value="Log In" class=formed></div>
+                <div class="main register but"><input type="button" value="Register" class=formed></div>
                 
                 <div class="login name"><input type="text" name="Name" placeholder="Name"  class="formed"></div>
                 <div class="login form"><input type="email" placeholder="Email Adress" class="formed"></div>
                 <div class="login form"><input type="password" placeholder="Password" class=formed></div>
-                <div class="login Button "><img src="img/loginButton.PNG"></div>
+                <div class="login Button "><input type="button" value="Log In" class=formed></div>
                
                 
             </div>
@@ -250,7 +295,7 @@
             <div class="addCodeImage">
                 <div class="device"><img src="img/knockiLogo.PNG"></div>
                 <div class="device"><img src="img/codeDevice.PNG"></div>
-                <div class="device nextButton"><img src="img/nextButton.PNG"></div>
+                <div class="device nextButton"><input type="button" value="Next" class=formed></div>
             
             </div>
             <div class="information">
@@ -264,8 +309,15 @@
                 <div class="device2"><input type="text" class="form2"></div>
                 <div class="device2">What surface</div>
                 <div class="device2"><input type="text" class="form2"></div>
-                <div class="device2 nextButton2"><img src="img/nextButton.PNG"></div>
+                
+                <div class="taparea device2">
             
+                </div>
+                <p class="device2">Tap your gesture Up</p>
+                <div class="gesture device2">
+                </div>
+            
+                <div class="device2 nextButton2"><input type="button" value="Next" class="formed formbutt"></div>
             </div>    
         
         
@@ -361,7 +413,20 @@
             $('.Nick').show();
              $('.NickComplete').hide();
             
-        });           
+        });  
+            
+        var dot = "<div class='dot'></div>";
+        var hyphen = "<div class='hyphen'></div>";
+        
+        $(".taparea").on("tap",function(e){
+            e.preventDefault();
+          $('.gesture').append(dot);
+        });
+        
+        $(".taparea").on("taphold",function(e){
+            e.preventDefault();
+          $('.gesture').append(hyphen);
+        });    
             
         
         </script>
