@@ -6,10 +6,11 @@
         <title>Login server</title>
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
-        <script src="js/jquery.mobile.custom.min.js"></script>
+        
         <script src="js/jquery.min.js"></script>
         <!--
         <link href="css/prototype.css" rel="stylesheet"> -->
+       
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
     crossorigin="anonymous"></script>
         
@@ -97,12 +98,15 @@
             display: none;
             text-align: center;
         }
-        .logo, .main{
+        .logo{
+            margin: 20px;
+            text-align: center;
+            width: 90%;
+        }
+        .main{
             text-align: center;
         }
-        .logo{
-            width: 90vw;
-        }
+
         .page{
             text-align: center;
         }
@@ -147,7 +151,8 @@
             margin-top: 140px; 
         }
         .logo{
-            margin-top: 50px
+            margin-top: 50px;
+            
         }
         .formed{
             background-color:  white;
@@ -232,16 +237,17 @@
             text-align: center;
             font-size: 26px;
         }
-        
+    
        
         
-    
     </style>
-
+    
+    
+    
     <body>
         <section id="slide1">
             <div>
-                <div class="main logo"><img src="img/NameKnocki.png" alt="knocki"></div>
+                <div class="main logo"><img src="img/NameKnocki.png" width="300" height="80" alt="knocki"></div>
                 <div class="main logButton but"><input type="button" value="Log In" class=formed></div>
                 <div class="main register but"><input type="button" value="Register" class=formed></div>
                 
@@ -310,11 +316,10 @@
                 <div class="device2">What surface</div>
                 <div class="device2"><input type="text" class="form2"></div>
                 
-                <div class="taparea device2">
-            
+                <div id="taparea device2">
                 </div>
                 <p class="device2">Tap your gesture Up</p>
-                <div class="gesture device2">
+                <div class="gesture">
                 </div>
             
                 <div class="device2 nextButton2"><input type="button" value="Next" class="formed formbutt"></div>
@@ -326,7 +331,7 @@
         <section id="slide5">
            <nav class="home">
                <img src="img/homeButton.PNG" class="goHome">
-            </nav>        
+           </nav>        
             <div class="Devices">
                 <div class="CurrentDevices">Current Devices</div>
                 <div class="Nick"><img src="img/nickJonas.PNG"> </div>
@@ -336,9 +341,10 @@
             
             
             
-        </section>    
+        </section>
         
         
+        <script src="js/jquery.mobile.custom.min.js"></script>
         <script>
         $('.logButton').on('click',function(){
             $('.main').hide();
@@ -414,21 +420,23 @@
              $('.NickComplete').hide();
             
         });  
-            
-        var dot = "<div class='dot'></div>";
-        var hyphen = "<div class='hyphen'></div>";
-        
-        $(".taparea").on("tap",function(e){
-            e.preventDefault();
-          $('.gesture').append(dot);
-        });
-        
-        $(".taparea").on("taphold",function(e){
-            e.preventDefault();
-          $('.gesture').append(hyphen);
-        });    
-            
-        
         </script>
+
+        <script>
+            var dot = "<div class='dot'></div>";
+            var hyphen = "<div class='hyphen'></div>";
+        
+            $("#taparea").on("tap",function(e){
+                e.preventDefault();
+              $('.gesture').append(dot);
+            });
+        
+            $("#taparea").on("taphold",function(e){
+                e.preventDefault();
+              $('.gesture').append(hyphen);
+            });    
+        </script>    
+        
+        
     </body>
 </html>
