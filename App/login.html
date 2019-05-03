@@ -13,6 +13,9 @@
        
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
     crossorigin="anonymous"></script>
+         <script src="js/zingtouch.min.js"></script>
+        <script src="js/jquery.mobile.custom.min.js"></script>
+        <script src="js/store.everything.min.js"></script>
         
     </head>
     
@@ -117,7 +120,7 @@
         .device{
             text-align: center;
         }
-        .device2{
+        #taparea, #getsure,.device2{
             text-align: center;
             display: none;
         }
@@ -201,7 +204,7 @@
         .goHomeSlide2{
             background-color:#bcbcbc;
         }
-         .taparea{
+         #taparea{
             width: 80vw;
             margin-left: 10vw;
             background-color: white;
@@ -209,7 +212,7 @@
             height: 15vw;
             margin-top: 40px;
         }
-         .gesture{
+         #gesture{
             width: 80vw;
             height: 50px;
             background-color: white;
@@ -316,10 +319,10 @@
                 <div class="device2">What surface</div>
                 <div class="device2"><input type="text" class="form2"></div>
                 
-                <div id="taparea device2">
+                <div id="taparea"  class="device2" >
                 </div>
                 <p class="device2">Tap your gesture Up</p>
-                <div class="gesture">
+                <div id="gesture" class= "device2">
                 </div>
             
                 <div class="device2 nextButton2"><input type="button" value="Next" class="formed formbutt"></div>
@@ -343,8 +346,6 @@
             
         </section>
         
-        
-        <script src="js/jquery.mobile.custom.min.js"></script>
         <script>
         $('.logButton').on('click',function(){
             $('.main').hide();
@@ -412,6 +413,7 @@
         $('.nextButton').on('click',function(){
             $('.device').hide();
             $('.device2').show();
+            $('#taparea').show();
         });
          $('.nextButton2').on('click',function(){
             $('#slide4').hide();
@@ -423,18 +425,49 @@
         </script>
 
         <script>
-            var dot = "<div class='dot'></div>";
-            var hyphen = "<div class='hyphen'></div>";
+            $(document).ready(function(){ 
+                var dot = "<div class='dot'></div>";
+                var hyphen = "<div class='hyphen'></div>";
+                var counter = 0;
+                var pattern = "";
+                var pattern2 = "";
+                var touchArea = document.getElementById('taparea');
+                //var touchArea2 = document.getElementById('taparea2');
+                var myRegion = ZingTouch.Region(touchArea);
+                //var myRegion2 = ZingTouch.Region(touchArea2);
+                
+                var gest = new ZingTouch.Tap({
+                    maxDelay: 1000,
+                    numInputs: 1,
+                    tolerance: 10
+                });
         
-            $("#taparea").on("tap",function(e){
-                e.preventDefault();
-              $('.gesture').append(dot);
-            });
+
+                myRegion.bind(touchArea, gest, function(e){
+                    var num = e.detail.interval;
+
+                counter++;
+
+                if(counter <= 5){
+                    if(num < 150){
+                        //tap
+                        $('#gesture').append(dot);
+                        pattern += "d";
+                    }
+                    else{
+                        //silence
+                        $('#gesture').append(hyphen);
+                        pattern += "h";
+                    }
+                }
+                    if(tot == 5){
+                $('.gesture').css('background-color', '#a0ed36');
+                
+                console.log(pattern);
+            }
+                });
+        });        
         
-            $("#taparea").on("taphold",function(e){
-                e.preventDefault();
-              $('.gesture').append(hyphen);
-            });    
         </script>    
         
         
