@@ -52,7 +52,7 @@
         }
         body {
             line-height: 1;
-        }
+        } 
         ol, ul {
             list-style: none;
         }
@@ -240,7 +240,10 @@
             text-align: center;
             font-size: 26px;
         }
-    
+        .register-btn{
+            display: none;
+            text-align: center;
+        }
        
         
     </style>
@@ -254,11 +257,11 @@
                 <div class="main logButton but"><input type="button" value="Log In" class=formed></div>
                 <div class="main register but"><input type="button" value="Register" class=formed></div>
                 
-                <div class="login name"><input type="text" name="Name" placeholder="Name"  class="formed"></div>
-                <div class="login form"><input type="email" placeholder="Email Adress" class="formed"></div>
-                <div class="login form"><input type="password" placeholder="Password" class=formed></div>
-                <div class="login Button "><input type="button" value="Log In" class=formed></div>
-               
+                <div class="login name"><input type="text" name="Name" placeholder="Name" class="formed"  id="create-name"></div>
+                <div class="login form"><input type="email" placeholder="Email Adress" class="formed" id="create-mail"></div>
+                <div class="login mail"><input type="password" placeholder="Password" class="formed" id="create-pass"></div>
+                <div class="login Button"><input type="button" value="Log In" class=formed></div>
+                <div class="register-btn"><input type="button" value="Create account" class=formed></div>
                 
             </div>
             
@@ -349,21 +352,25 @@
         <script>
         $('.logButton').on('click',function(){
             $('.main').hide();
-           $('.logo').show();
+            $('.logo').show();
             $('.login').show();
             $('.name').hide();
+            $('.register-btn').hide();
         });
         
         $('.register').on('click',function(){
             $('.main').hide();
-           $('.logo').show();
-            $('.login').show();
+            $('.logo').show();
+            $('.name').show();
+            $('.form').show();
+            $('.mail').show();
+            $('.Button').hide();
+            $('.register-btn').show();
         });
             
-        $('.Button').on('click',function(){
-           $('#slide1').hide();
-           $('#slide2').show();
-        });
+        
+            
+
         
         $('.Out').on('click',function(){
            $('#slide2').hide();
@@ -422,6 +429,14 @@
              $('.NickComplete').hide();
             
         });  
+        $('.register-btn').on('click',function(){
+            $('.main').hide();
+            $('.logo').show();
+            $('.login').show();
+            $('.name').hide();
+            $('.register-btn').hide();
+            
+        });
         </script>
 
         <script>
@@ -469,6 +484,41 @@
         });        
         
         </script>    
+        
+        <script>
+            store.set('logged-in-user', null);
+            
+            if(store.get('tot-usr')== null){
+                store.set('tot-usr', 0)
+            }
+            
+            $('.register-btn').on('click',function(){
+                
+                store.set('tot-usr', store.get('tot-usr') +1);
+                
+                store.set('user-' +store.get('tot-usr'),{
+                    name: $('#create-name').val(),
+                    password: $('#create-pass').val(),
+                    mail: $('#create-mail').val()
+                    
+                })
+                
+            });
+            $('.Button').on('click',function(){
+                for(var i=1; i<=store.get('tot-usr'); i++){
+                    var u = store.get('user-' + i);
+                    if(u.name) == $('#create-name').val() &&
+                       u.password == $('#create-pass').val() ){
+                       store.set('logged-in-user', u.name);
+                       $('#slide1').hide();
+                       $('#slide2').show();
+                    }
+                }
+                
+                
+            });
+        
+        </script>
         
         
     </body>
