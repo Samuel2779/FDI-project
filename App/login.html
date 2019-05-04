@@ -507,7 +507,7 @@
             $('.Button').on('click',function(){
                 for(var i=1; i<=store.get('tot-usr'); i++){
                     var u = store.get('user-' + i);
-                    if(u.name) == $('#create-name').val() &&
+                    if(u.name == $('#create-name').val() &&
                        u.password == $('#create-pass').val() ){
                        store.set('logged-in-user', u.name);
                        $('#slide1').hide();
