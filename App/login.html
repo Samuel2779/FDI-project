@@ -6,6 +6,7 @@
         <title>Login server</title>
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         
         <script src="js/jquery.min.js"></script>
         <!--
@@ -88,7 +89,7 @@
             overflow-x: hidden;
         }
         #slide4{
-            font-family: 'ZCOOL+XiaoWei';
+            font-family: 'Raleway';
             background-color: white; 
             overflow-x: hidden;
         }
@@ -132,7 +133,8 @@
         }
         nav{
           width: 100%;
-            background-color:  #bcbcbc;
+        height: 43px;    
+            background-color:  #cecece;
         }
         .goHome{
             right: 15px;
@@ -168,10 +170,10 @@
         .but{
             line-height: 40px; 
         }
-        .information, .CurrentDevices{
+        .information, .CurrentDevices, .profile{
             line-height: 35px;
             font-size: 27px;
-             font-family: 'ZCOOL XiaoWei';
+             font-family: 'Raleway';
         }
         .form2{
             border-radius: 10px;
@@ -208,10 +210,11 @@
          #taparea{
             width: 80vw;
             margin-left: 10vw;
-            background-color: white;
+            background-color: #83c661;
             border: 1px solid #999;
             height: 15vw;
-            margin-top: 40px;
+            margin-top: 4px;
+            margin-bottom: 5px;
         }
          #gesture{
             width: 80vw;
@@ -249,7 +252,7 @@
             margin: 30px;
         }
         .information {
-            border: 2px solid black;
+            border-bottom: 1px solid black;
         }
        
         
@@ -268,6 +271,7 @@
                 <div class="login form"><input type="email" placeholder="Email Adress" class="formed" id="create-mail"></div>
                 <div class="login mail"><input type="password" placeholder="Password" class="formed" id="create-pass"></div>
                 <div class="login Button"><input type="button" value="Log In" class=formed></div>
+                <div class="login goBack"><input type="button" value="Go Back" class="formed"></div>
                 <div class="login error"></div>
                 <div class="register-btn"><input type="button" value="Create account" class=formed></div>
                 
@@ -304,7 +308,7 @@
                 <div class="profile"><input type="password" placeholder="Current Password" class="form3"></div>
                 <div class="profile"><input type="password" placeholder="New Password" class="form3"></div>
                 <div class="profile"><input type="password" placeholder="Confirm Password" class="form3"></div>
-                 <div class="profile confirmSlide3"><input type="button" value="Confirm" class=formed>></div>
+                 <div class="profile confirmSlide3"><input type="button" value="Confirm" class=formed></div>
             </div>    
         </section>
         
@@ -314,7 +318,6 @@
             </nav>            
             <div class="addCodeImage">
                 <div class="device"><img src="img/knockiLogo.PNG"></div>
-                <div class="device"><img src="img/codeDevice.PNG"></div>
                 <div class="device nextButton"><input type="button" value="Next" class=formed></div>
             
             </div>
@@ -326,9 +329,9 @@
                         <li><input class="type-other" data-t='c' type="radio" name="g">Other</li>
                     </ul></div>
                 <div class="device2">Knocki Nickname</div>
-                <div class="device2"><input type="text" id="Nickname" class="form2"></div>
+                <div class="device2 typeText"><input type="text" id="Nickname" class="form2"></div>
                 <div class="device2">What surface</div>
-                <div class="device2"><input id="surface" type="text" class="form2"></div>
+                <div class="device2 typeText"><input id="surface" type="text" class="form2"></div>
                 <div class="device2">
                     <select class="device2 form2">
                         <option value="lights">lights</option>
@@ -339,9 +342,9 @@
                     </select>
                 </div>
                 
+                <p class="device2">Tap or hold on the Green</p>
                 <div id="taparea"  class="device2" >
                 </div>
-                <p class="device2">Tap your gesture Up</p>
                 <div id="gesture" class= "device2">
                 </div>
             
@@ -365,6 +368,7 @@
         </section>
         
         <script>
+            
         $('.logButton').on('click',function(){
             $('.main').hide();
             $('.logo').show();
@@ -372,6 +376,13 @@
             $('.name').hide();
             $('.register-btn').hide();
         });
+        $('.goBack').on('click',function(){
+             $('.main').show();
+            $('.logo').show();
+            $('.login').hide();
+            $('.name').hide();
+             $('.register-btn').hide();
+        });    
         
         $('.register').on('click',function(){
             $('.main').hide();
@@ -439,7 +450,12 @@
              $('#slide2').show();
             $('#slide3').hide();
             $('#slide4').hide();
-            $('#slide5').hide();    
+            $('#slide5').hide();
+             $('#gesture').empty();
+             $('#Nickname').empty();
+             $('#surface').empty();
+             counter = 0;
+             
         
             
             
@@ -557,6 +573,7 @@
                    nickname: $('#Nickname').val(),
                    surface: $('#surface').val(),
                    gesture: $('#gesture').val()
+                     
                  });
                  
             });
@@ -575,6 +592,7 @@
                                     <div class="device2">${s.surface}</div>
                                     <div class="device2">Location</div>
                                     <div class="device2">type-${s.location}</div>
+                                        
                             </div>
                         `);
                    }

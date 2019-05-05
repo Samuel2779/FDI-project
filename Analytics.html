@@ -355,28 +355,8 @@
     .knockiPar{
         margin: 50px;
     }  
-    .videos{
-            position:relative;
-            padding-top:56%;
-            margin-left: 40px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            text-align: center;
-    }
-    .videos2{
-         position:relative;
-            margin-left: 40px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            text-align: center;
-            line-height: 40px;
-            margin-bottom: 50px;
-            font-family: 'ZCOOL+XiaoWei';
-            font-size: 25px;
-            margin-right: 25px;
-        
+    #analytic1, #analytic2, #analytic3, #analytic4{
+        width: 99vw;
     }
     
         
@@ -393,7 +373,7 @@
         <a class="hvr-shrink" href="personas.html">Personas</a>
         <a class="hvr-shrink" href="members.html">Members</a>
         <a class="hvr-shrink" href="benchmarking.html">Benchmarking</a>
-        <a class="hvr-shrink" href="benchmarking.html">Analytics</a>
+        <a class="hvr-shrink" href="Analytics.html">Analytics</a>
 
     </div>
     
@@ -403,78 +383,27 @@
         <li><a class="hvr-shrink" href="personas.html">Personas</a></li>
         <li><a class="hvr-shrink" href="members.html">Members</a></li>
         <li><a class="hvr-shrink" href="benchmarking.html">Benchmarking</a></li>
-        <li><a class="hvr-shrink" href="benchmarking.html">Analytics</a></li>
+        <li><a class="hvr-shrink" href="Analytics.html">Analytics</a></li>
         
     </ul>
     
-
-    <div class="informationAndImage">
-         
-        <!--<div><img src="img/knockiDevice.png" alt"knocki image" class="imageDevice"></div> -->
-        <div><h2>What's knocki?</h2>
-            <p class="knockiPar">A small wireless device that instantly transforms ordinary surfaces (walls, tables, doors, furniture, countertops, and more) into powerful yet easy to access remote controls for the smart technology around you.</p>
-        </div>
-        <div class="slider"><img src="img/Knocki.png" alt"knocki image" class="imageDevice"></div>     
+    <div class="analis">
+        <img src="img/analytics1.PNG" id="analytic1">
+        <img src="img/analytics2.PNG" id="analytic2">
+        <img src="img/analytics3.PNG" id="analytic3">
+        <img src="img/analytics4.PNG" id="analytic4">
+        
         
     </div>
     
+     <script>
+                $('#menu').on('click', function(){
+                    $('.drop-menu').slideToggle();
+                });
     
-              <div class="videos">
-            <iframe src="https://youtube.com/embed/H0aotMnSV5k" frameborder=" 0" allowfullscreen
-                style="position:absolute;top:0;left:0;width:80%;height:80%;"> </iframe> 
-                </div>
-            <div class="videos">
-            <iframe src="https://youtube.com/embed/mns9va-lNi4" frameborder=" 0" allowfullscreen
-                style="position:absolute;top:0;left:0;width:80%;height:80%;"> </iframe>
-            </div>   
-            <div>
-              <div class="videos">
-            <iframe src="https://youtube.com/embed/X94oypeFWtw" frameborder=" 0" allowfullscreen
-                style="position:absolute;top:0;left:0;width:80%;height:80%;"> </iframe>
-                </div> 
-            <div class="videos">
-            <iframe src="https://youtube.com/embed/ff3AyugDy3c" frameborder=" 0" allowfullscreen
-                style="position:absolute;top:0;left:0;width:80%;height:80%;"> </iframe>
-            </div>    
-
-                <div class="videos2">
-                    <h2>Analysis</h2>
-                    <p>After analyzing the user tests, we got to the conclusion that our main problem was the size of the letter of the app, people were having a hard time distinguishing what was written, and sometimes because of the size mixed with the background, some letters would look distorted and seem as if it was misspelled. Another note we got was people want faster ways to do stuff, such as login with social networks or Gmail.
-                    On the other hand, we realized most people didn’t really payed attention to the written instructions, as well people want a more graphic interface using colors instead of using such neutral tones, making it feel more dynamic and attractive. This analysis will help us to improve our design and give to our clients a better experience when they work with this app.
-                    </p>        
-                </div>
+            </script>    
+    
+      </body>    
                 
-                
-                 <div class="videos2">
-                    <h2>Promotional Video</h2>
-                     
-                </div>
-                
-                 <div class="videos">
-            <iframe src="https://youtube.com/embed/KaYw04gFoiw" frameborder=" 0" allowfullscreen
-                style="position:absolute;top:0;left:0;width:80%;height:80%;"> </iframe>
-            </div>
-                 <div class="videos2">
-                    <h2>Evaluation</h2>
-                     
-                </div>
-                  <div class="videos">
-            <iframe src="https://youtube.com/embed/uk0tWLMxSMY" frameborder=" 0" allowfullscreen
-                style="position:absolute;top:0;left:0;width:80%;height:80%;"> </iframe>
-            </div>    
+</html>     
     
-    
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script>
-    $('#menu').on('click', function(){
-        $('.drop-menu').slideToggle();
-    });
-    
-    </script>
-
-
-
-
-</body>
-
-</html>
