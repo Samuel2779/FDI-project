@@ -203,6 +203,7 @@
         }
         .goHomeSlide2{
             background-color:#bcbcbc;
+            height: 43px;
         }
          #taparea{
             width: 80vw;
@@ -247,6 +248,9 @@
         .error{
             margin: 30px;
         }
+        .information {
+            border: 2px solid black;
+        }
        
         
     </style>
@@ -273,7 +277,7 @@
         
         <section id="slide2">
            <nav class="home goHomeSlide2">
-               <img src="img/homeButton.PNG" class="goHome">
+              
             </nav>            
             <div class="image-wrapper"> 
                 <div class="page profileButton"><img src="img/profileButton.PNG"> </div>
@@ -343,9 +347,7 @@
                <img src="img/homeButton.PNG" class="goHome">
            </nav>        
             <div class="Devices">
-                <div class="CurrentDevices">Current Devices</div>
-                <div class="Nick"><img src="img/nickJonas.PNG"> </div>
-                <div class="NickComplete"><img src="img/nickJonasComplete.PNG"></div>
+
 
             </div>
             
@@ -390,12 +392,8 @@
             $('#slide3').hide();
             $('#slide4').hide();
             $('#slide5').show();
-            $('.NickComplete').show();
-            displayknocki();
-        });
-        $('.Nick').on('click',function(){
-            $('.NickComplete').show();
-            $('.Nick').hide();
+        
+           
         });
             
         $('.profileButton').on('click',function(){
@@ -428,10 +426,13 @@
             $('#taparea').show();
         });
          $('.nextButton2').on('click',function(){
+            displayknocki();
+             $('#slide2').hide();
+            $('#slide3').hide();
             $('#slide4').hide();
-            $('#slide5').show();
-            $('.Nick').show();
-             $('.NickComplete').hide();
+            $('#slide5').show();    
+        
+            
             
         });  
         $('.register-btn').on('click',function(){
@@ -482,7 +483,7 @@
                         pattern += "h";
                     }
                 }
-                    if(tot == 5){
+                if(tot == 5){
                 $('.gesture').css('background-color', '#a0ed36');
                 
                 console.log(pattern);
@@ -553,18 +554,18 @@
             
             function displayknocki(){
                 
-                $('.Devices').empty();
+                //$('.Devices').empty();
                 for(var i=1; i<=store.get('tot-knocki'); i++){
                    var s = store.get('knocki-' + i);
                    if(s.owner == store.get('logged-in-user') ){
                         $('.Devices').append(`
-                            <div class="information">
-                                <div class="device2">Knocki Nickname</div>  
-                                <div class="device2">${s.nickname}</div>
-                                <div class="device2">What surface</div>
-                                <div class="device2">${s.surface}</div>
-                                <div class="device2">Location</div>
-                                <div class="device2">type-${s.location}</div>
+                                <div class="information">
+                                    <div class="device2">Knocki Nickname</div>  
+                                    <div class="device2">${s.nickname}</div>
+                                    <div class="device2">What surface</div>
+                                    <div class="device2">${s.surface}</div>
+                                    <div class="device2">Location</div>
+                                    <div class="device2">type-${s.location}</div>
                             </div>
                         `);
                    }
