@@ -79,7 +79,7 @@
             overflow-x: hidden;
         }
         #slide2{
-            background-color: #cdd1d6;
+            background-color: #cecece;
             overflow-x: hidden;
             
         }
@@ -329,6 +329,15 @@
                 <div class="device2"><input type="text" id="Nickname" class="form2"></div>
                 <div class="device2">What surface</div>
                 <div class="device2"><input id="surface" type="text" class="form2"></div>
+                <div class="device2">
+                    <select class="device2 form2">
+                        <option value="lights">lights</option>
+                        <option value="Alarm">Alarm</option>
+                        <option value="Air Conditioner">Air Conditioner</option>
+                        <option value="Clock">Clock</option>
+                    
+                    </select>
+                </div>
                 
                 <div id="taparea"  class="device2" >
                 </div>
@@ -427,10 +436,10 @@
         });
          $('.nextButton2').on('click',function(){
             displayknocki();
-             $('#slide2').hide();
+             $('#slide2').show();
             $('#slide3').hide();
             $('#slide4').hide();
-            $('#slide5').show();    
+            $('#slide5').hide();    
         
             
             
